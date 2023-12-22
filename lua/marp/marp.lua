@@ -9,6 +9,22 @@ local function marp_running()
 end
 
 --[[
+    Toggles the Marp server.
+    @usage
+    ```lua
+    local marp = require("marp")
+    marp.toggle()
+    ```
+]]
+function M.toggle()
+  if marp_running() then
+    M.stop()
+  else
+    M.start()
+  end
+end
+
+--[[
     Starts the Marp server.
     @usage
     ```lua

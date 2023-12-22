@@ -74,7 +74,7 @@ function M.wait_for_response(url, max_attempts, delay_between_attempts)
       server_responded = true
     else
       attempts = attempts + 1
-      print("Attempt", attempts, "- Server not yet responding. Retrying in", delay_between_attempts, "seconds...")
+      print("Attempt", attempts, "- Server not yet responding. Retrying in", delay_between_attempts, "second(s)...")
       M.wait(1)
     end
   end
