@@ -80,6 +80,31 @@ function M.wait_for_response(url, max_attempts, delay_between_attempts)
   end
 end
 
+--[[]
+    Determines whether a directory contains Markdown files.
+    @param current_dir (string) The directory to check.
+    @return (boolean) Whether the directory contains Markdown files.
+    @usage
+    ```lua
+    local util = require("marp/util")
+    local contains_md_files = util.dir_contains_md_files(vim.fn.getcwd())
+    ```
+]]
+function M.dir_contains_md_files(current_dir)
+  local files = vim.fn.readdir(current_dir)
+  for _, file in ipairs(files) do
+    if file ~= "." and file ~= ".." then
+      local path = current_dir .. "/" .. file
+      local is_file = vim.fn.isdirectory(path)
+
+      if is_file == 0 and file:match("%.md$") then
+        return true
+      end
+    end
+  end
+  return false
+end
+
 --[[
     Logs a message to the Vim command line.
     @param msg (string) The message to log.

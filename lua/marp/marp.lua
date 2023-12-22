@@ -4,7 +4,7 @@ local config = require("marp/config")
 local M = {}
 M.jobid = 0
 
-local function _is_marp_running()
+local function marp_running()
   return M.jobid ~= 0
 end
 
@@ -17,12 +17,19 @@ end
     ```
 ]]
 function M.start()
-  if _is_marp_running() then
+  if not util.dir_contains_md_files(vim.fn.getcwd()) then
+    util.log_info("no Markdown files found, exiting!")
+    return
+  end
+
+  if marp_running() then
     util.log_info("already running")
     return
   end
 
   local port = config.options.port
+  local wait_for_response_timeout = config.options.wait_for_response_timeout
+  local wait_for_response_delay = config.options.wait_for_response_delay
 
   local marp_start_command = "PORT=" .. port .. " marp --server " .. vim.fn.getcwd()
 
@@ -35,7 +42,7 @@ function M.start()
     end,
   })
 
-  util.wait_for_response("http://localhost:" .. port, 30, 1)
+  util.wait_for_response("http://localhost:" .. port, wait_for_response_timeout, wait_for_response_delay)
   util.open_url_in_browser("http://localhost:" .. port)
 end
 
@@ -54,7 +61,7 @@ function M.stop()
 end
 
 --[[
-    Returns the status of the Marp server.
+    Logs the status of the Marp server.
     @usage
     ```lua
     local marp = require("marp")
