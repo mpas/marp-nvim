@@ -8,7 +8,7 @@ A [neovim](https://neovim.io/) plugin for [Marp](https://marp.app/).
 
 ## ⚡️ Requirements
 
-- Marp CLI installed and available in your path
+- [Marp](https://marp.app/) CLI installed and available in your path
 ## 📦 Installation
 
 Install the plugin with your preferred package manager:
@@ -24,3 +24,5 @@ The following defaults are provided:
   wait_for_response_delay = 1, -- how long to wait between attempts to connect to the server
 }
 ```
+
+In the above example, the Marp server will be started on port 8080, and the plugin will wait for up to 30 seconds for a response from the server before giving up. It will try to connect to the server every second.
