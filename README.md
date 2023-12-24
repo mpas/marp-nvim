@@ -3,6 +3,7 @@ A [neovim](https://neovim.io/) plugin for [Marp](https://marp.app/).
 
 ## ✨ Features
 - start/stop the Marp server
+- toggle the Marp server (start/stop)
 - see if Marp server is running
 - browser window opens when Marp is running and ready
 
@@ -55,3 +56,19 @@ The following defaults are provided:
 ```
 
 In the above example, the Marp server will be started on port 8080, and the plugin will wait for up to 30 seconds for a response from the server before giving up. It will try to connect to the server every second.
+
+## ⌨️ Keybindings
+This plugin does not set any keybindings by default. You can set them yourself like this:
+
+```lua
+vim.keymap.set("n", "<leader>MT", "<cmd>MarpToggle<cr>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>MS", "<cmd>MarpStatus<cr>", { noremap = true, silent = true })
+...
+```
+
+The following commands are available:
+- `:MarpStart` - start the Marp server
+- `:MarpStop` - stop the Marp server
+- `:MarpToggle` - toggle the Marp server (start/stop)
+- `:MarpStatus` - see if Marp server is running
+
