@@ -13,6 +13,35 @@ A [neovim](https://neovim.io/) plugin for [Marp](https://marp.app/).
 
 Install the plugin with your preferred package manager:
 
+Packer:
+```lua
+  use({
+    "mpas/marp-nvim",
+  }),
+```
+
+Lazy:
+```lua
+  {
+    "mpas/marp-nvim",
+  },
+```
+
+With a specific configuration:
+```lua
+  {
+    "mpas/marp-nvim",
+    config = function()
+      require("marp-nvim").setup({
+        port = 8080,
+        wait_for_response_timeout = 30,
+        wait_for_response_delay = 1,
+      })
+    end,
+  },
+```
+
+
 ## ⚙️ Configuration
 
 The following defaults are provided:
