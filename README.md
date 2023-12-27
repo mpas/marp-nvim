@@ -72,3 +72,6 @@ The following commands are available:
 - `:MarpToggle` - toggle the Marp server (start/stop)
 - `:MarpStatus` - see if Marp server is running
 
+## 💡Inspiration
+
+This plugin is inspired by [aca/marp.nvim](https://github.com/aca/marp.nvim)!
