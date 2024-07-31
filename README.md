@@ -72,6 +72,9 @@ The following commands are available:
 - `:MarpToggle` - toggle the Marp server (start/stop)
 - `:MarpStatus` - see if Marp server is running
 
+## 🎨 Theming
+Marp CLI can recognize custom themes that are in the `themes/` directory in your project's root directory. For example, if you open neovim in the `presentations` directory, created a directory inside of `presentations` called `themes` and place the theme CSS files inside of this directory. They should be automatically loaded by Marp and applied to presentations with the theme specified.
+
 ## 💡Inspiration
 
 This plugin is inspired by [aca/marp.nvim](https://github.com/aca/marp.nvim)!
