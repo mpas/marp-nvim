@@ -33,7 +33,7 @@ With a specific configuration:
   {
     "mpas/marp-nvim",
     config = function()
-      require("marp-nvim").setup({
+      require("marp").setup({
         port = 8080,
         wait_for_response_timeout = 30,
         wait_for_response_delay = 1,
