@@ -33,7 +33,7 @@ With a specific configuration:
   {
     "mpas/marp-nvim",
     config = function()
-      require("marp-nvim").setup({
+      require("marp").setup({
         port = 8080,
         wait_for_response_timeout = 30,
         wait_for_response_delay = 1,
@@ -71,6 +71,9 @@ The following commands are available:
 - `:MarpStop` - stop the Marp server
 - `:MarpToggle` - toggle the Marp server (start/stop)
 - `:MarpStatus` - see if Marp server is running
+
+## 🎨 Theming
+Marp CLI can recognize custom themes that are in the `themes/` directory in your project's root directory. For example, if you open neovim in the `presentations` directory, created a directory inside of `presentations` called `themes` and place the theme CSS files inside of this directory. They should be automatically loaded by Marp and applied to presentations with the theme specified.
 
 ## 💡Inspiration
 
