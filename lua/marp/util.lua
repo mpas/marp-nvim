@@ -56,7 +56,7 @@ end
     @param url (string) The URL to open.
     @usage
     ```lua
-    local browser = require("marp/browser")
+    local browser = require("marp.browser")
     browser.open("https://example.com")
     ```
 ]]
@@ -102,7 +102,7 @@ end
     @param delay_between_attempts (number) The number of seconds to wait between attempts.
     @usage
     ```lua
-    local browser = require("marp/browser")
+    local browser = require("marp.browser")
     browser.wait_for_response("https://example.com", 5, 1)
     ```
 ]]
@@ -209,7 +209,7 @@ end
     @return (boolean) Whether the directory contains Markdown files.
     @usage
     ```lua
-    local util = require("marp/util")
+    local util = require("marp.util")
     local contains_md_files = util.dir_contains_md_files(vim.fn.getcwd())
     ```
 ]]
@@ -240,7 +240,7 @@ local hl_to_level = {
     @param hl (string) The highlight group to use for command-line fallback.
     @usage
     ```lua
-    local util = require("marp/util")
+    local util = require("marp.util")
     util.log("Hello, world!", "InfoMsg")
     ```
 ]]
@@ -258,7 +258,7 @@ end
     @param msg (string) The message to log.
     @usage
     ```lua
-    local util = require("marp/util")
+    local util = require("marp.util")
     util.log_info("Hello, world!")
     ```
 ]]
@@ -271,7 +271,7 @@ end
     @param msg (string) The message to log.
     @usage
     ```lua
-    local util = require("marp/util")
+    local util = require("marp.util")
     util.log_warn("Hello, world!")
     ```
 ]]
@@ -284,7 +284,7 @@ end
     @param msg (string) The message to log.
     @usage
     ```lua
-    local util = require("marp/util")
+    local util = require("marp.util")
     util.log_error("Hello, world!")
     ```
 ]]

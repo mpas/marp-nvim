@@ -1,8 +1,8 @@
 local browser = require("marp.browser")
 local cli = require("marp.cli")
-local config = require("marp/config")
+local config = require("marp.config")
 local lazy = require("marp.lazy")
-local util = require("marp/util")
+local util = require("marp.util")
 
 local M = {}
 M.jobid = 0

@@ -1,8 +1,8 @@
 local cli = require("marp.cli")
-local config = require("marp/config")
+local config = require("marp.config")
 local install = require("marp.install")
 local lazy = require("marp.lazy")
-local marp = require("marp/marp")
+local marp = require("marp.marp")
 
 local M = {}
 
