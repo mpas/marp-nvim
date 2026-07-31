@@ -122,11 +122,6 @@ function M.profile_fs_path()
   return launch_path
 end
 
---- Backward-compatible alias.
-function M.profile_dir_unix()
-  return M.default_profile_dir_unix()
-end
-
 --- Chromium flags for a dedicated preview profile (app mode: no URL bar, single window).
 function M.dedicated_launch_flags(profile, url)
   return {
@@ -138,9 +133,6 @@ function M.dedicated_launch_flags(profile, url)
     "--app=" .. url,
   }
 end
-
---- Backward-compatible alias.
-M.dedicated_edge_launch_flags = M.dedicated_launch_flags
 
 local function default_preferences()
   return {
@@ -237,11 +229,6 @@ function M.prepare_chromium_profile(profile_dir, separator)
   sanitize_local_state(profile_dir .. separator .. "Local State")
 end
 
---- Backward-compatible alias.
-function M.sanitize_chromium_profile(profile_dir, separator)
-  M.prepare_chromium_profile(profile_dir, separator)
-end
-
 function M.prepare_dedicated_profile()
   local fs_path = M.profile_fs_path()
   if fs_path then
@@ -292,10 +279,6 @@ function M.find_dedicated_executable()
 
   return nil
 end
-
---- Backward-compatible aliases.
-M.find_chromium_executable = M.find_dedicated_executable
-M.find_edge_executable = M.find_dedicated_executable
 
 function M.uses_dedicated_preview()
   return config.options.preview_browser == "dedicated"

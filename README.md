@@ -219,7 +219,7 @@ The following commands are available:
 - `:MarpStop` - stop the Marp server
 - `:MarpToggle` - toggle the Marp server (start/stop)
 - `:MarpStatus` - see if Marp server is running
-- `:MarpInstall` - install the bundled Marp CLI (only registered when Marp is not already available)
+- `:MarpInstall [plugin_dir]` - install the bundled Marp CLI (only registered when Marp is not already available); optionally pass a custom plugin directory to install into, mainly useful for advanced/internal setups, otherwise the plugin's own directory is used
 
 ## 🎨 Theming
 Marp CLI can recognize custom themes that are in the `themes/` directory in your project's root directory. For example, if you open neovim in the `presentations` directory, created a directory inside of `presentations` called `themes` and place the theme CSS files inside of this directory. They should be automatically loaded by Marp and applied to presentations with the theme specified.

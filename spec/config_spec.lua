@@ -50,16 +50,4 @@ describe("marp.config", function()
 
     assert.equals("system", config.options.preview_browser)
   end)
-
-  it("maps deprecated wsl options to dedicated options", function()
-    config.setup({
-      wsl_browser = "/mnt/c/Edge/msedge.exe",
-      wsl_preview_profile = "C:\\Temp\\marp",
-    })
-
-    assert.equals("/mnt/c/Edge/msedge.exe", config.options.dedicated_browser)
-    assert.equals("C:\\Temp\\marp", config.options.dedicated_preview_profile)
-    assert.is_nil(config.options.wsl_browser)
-    assert.is_nil(config.options.wsl_preview_profile)
-  end)
 end)

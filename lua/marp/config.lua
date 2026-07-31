@@ -28,34 +28,9 @@ local function normalize_preview_browser(opts)
   end
 end
 
-local function normalize_deprecated_options(opts)
-  if opts.wsl_browser and opts.wsl_browser ~= "" then
-    if not opts.dedicated_browser or opts.dedicated_browser == "" then
-      opts.dedicated_browser = opts.wsl_browser
-    end
-    vim.notify(
-      "marp-nvim: wsl_browser is deprecated; use dedicated_browser",
-      vim.log.levels.WARN
-    )
-    opts.wsl_browser = nil
-  end
-
-  if opts.wsl_preview_profile and opts.wsl_preview_profile ~= "" then
-    if not opts.dedicated_preview_profile or opts.dedicated_preview_profile == "" then
-      opts.dedicated_preview_profile = opts.wsl_preview_profile
-    end
-    vim.notify(
-      "marp-nvim: wsl_preview_profile is deprecated; use dedicated_preview_profile",
-      vim.log.levels.WARN
-    )
-    opts.wsl_preview_profile = nil
-  end
-end
-
 function M.setup(options)
   local opts = vim.tbl_deep_extend("force", {}, defaults, options or {})
   normalize_preview_browser(opts)
-  normalize_deprecated_options(opts)
   M.options = opts
 end
 
